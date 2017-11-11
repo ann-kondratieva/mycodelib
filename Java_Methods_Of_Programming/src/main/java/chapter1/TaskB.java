@@ -19,10 +19,9 @@ public class TaskB {
         printThreedigitNumbersWhereDigitsAreDifferent(array);
         printArray(array);
 
-
-
-
     }
+
+
 
     static void sortArray(int[] array){
         for(int i=0; i<array.length; i++){
