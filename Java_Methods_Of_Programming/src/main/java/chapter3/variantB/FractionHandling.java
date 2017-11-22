@@ -48,7 +48,6 @@ public class FractionHandling {
     }
 
     public static Fraction addition(Fraction... fraction){
-        Fraction result;
         int m=0,n=1;
         int t=1;
         for(int i=0; i<fraction.length; i++){
@@ -64,7 +63,7 @@ public class FractionHandling {
             n*=fraction[i].getN();
         }
 
-        return result= new Fraction(m/gcd(m,n),n/gcd(m,n));
+        return new Fraction(m/gcd(m,n),n/gcd(m,n));
     }
 
     public static int gcd(int a, int b) {
@@ -74,7 +73,6 @@ public class FractionHandling {
     }
 
     public static Fraction subtraction(Fraction[] fraction){
-        Fraction result;
         int m=0,n=1;
         int t=1;
         for(int i=0; i<fraction.length; i++){
@@ -94,22 +92,20 @@ public class FractionHandling {
             n*=fraction[i].getN();
         }
 
-        return result= new Fraction(m/gcd(m,n),n/gcd(m,n));
+        return new Fraction(m/gcd(m,n),n/gcd(m,n));
     }
 
     public static Fraction multiplication(Fraction[] fraction){
-        Fraction result;
         int m=1,n=1;
         for(int i=0; i<fraction.length; i++){
             m*=fraction[i].getM();
             n*=fraction[i].getN();
         }
 
-        return result= new Fraction(m/gcd(m,n),n/gcd(m,n));
+        return new Fraction(m/gcd(m,n),n/gcd(m,n));
     }
 
     public static Fraction division(Fraction[] fraction){
-        Fraction result;
         int m=1,n=1;
         for(int i=0; i<fraction.length; i++){
             if(i!=0) {
@@ -121,7 +117,7 @@ public class FractionHandling {
             }
         }
 
-        return result= new Fraction(m/gcd(m,n),n/gcd(m,n));
+        return new Fraction(m/gcd(m,n),n/gcd(m,n));
     }
 
     public static void changeEven(Fraction[] fraction){
