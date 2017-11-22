@@ -2,6 +2,16 @@ package chapter3.variantA;
 
 import java.util.Scanner;
 
+/**
+ * Class {@code Manager} contains methods which handle arrays that contain
+ * {@code Student} elements
+ * a) список студентов заданного факультета;
+ * b) списки студентов для каждого факультета и курса;
+ * c) список студентов, родившихся после заданного года;
+ * d) список учебной группы.
+ * @author Ann Kondratieva
+ */
+
 enum Faculties {KSIS, FKP, IEF}
 
 public class Manager {
