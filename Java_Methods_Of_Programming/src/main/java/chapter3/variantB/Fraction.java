@@ -9,7 +9,7 @@ public class Fraction {
         if(n!=0){
             this.n = n;
         }
-        else throw new NumberFormatException();
+        else throw new ArithmeticException() ;
     }
 
     public int getM() {
@@ -30,7 +30,10 @@ public class Fraction {
 
     @Override
     public String toString() {
-        return m+"/"+n;
+        if(m!=0 && m>0 && n>0) return m+"/"+n;
+        else if (m==0) return "0";
+        else if(m<0 && n<0) return Math.abs(m)+"/"+Math.abs(n);
+        else return "-"+Math.abs(m)+"/"+Math.abs(n);
     }
 
 

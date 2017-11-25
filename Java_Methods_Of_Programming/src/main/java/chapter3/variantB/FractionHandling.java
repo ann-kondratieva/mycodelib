@@ -3,8 +3,8 @@ package chapter3.variantB;
 import java.util.Scanner;
 
 /**
- * Class {@code Manager} contains methods which handle arrays that contain
- * {@code Student} elements
+ * Class {@code FractionHandling} contains methods which handle arrays that contain
+ * {@code Fraction} elements
  * Определить класс {@code Fraction} в виде пары чисел m и n.
  * Объявить и инициализировать массив из k дробей, ввести/вывести
  * значения для массива дробей. Создать массив/список/множество объектов и пе-
@@ -72,7 +72,7 @@ public class FractionHandling {
         return gcd(b, a % b);
     }
 
-    public static Fraction subtraction(Fraction[] fraction){
+    public static Fraction subtraction(Fraction... fraction){
         int m=0,n=1;
         int t=1;
         for(int i=0; i<fraction.length; i++){
@@ -95,7 +95,7 @@ public class FractionHandling {
         return new Fraction(m/gcd(m,n),n/gcd(m,n));
     }
 
-    public static Fraction multiplication(Fraction[] fraction){
+    public static Fraction multiplication(Fraction... fraction){
         int m=1,n=1;
         for(int i=0; i<fraction.length; i++){
             m*=fraction[i].getM();
@@ -105,7 +105,7 @@ public class FractionHandling {
         return new Fraction(m/gcd(m,n),n/gcd(m,n));
     }
 
-    public static Fraction division(Fraction[] fraction){
+    public static Fraction division(Fraction... fraction){
         int m=1,n=1;
         for(int i=0; i<fraction.length; i++){
             if(i!=0) {
@@ -117,7 +117,13 @@ public class FractionHandling {
             }
         }
 
-        return new Fraction(m/gcd(m,n),n/gcd(m,n));
+        try {
+            return new Fraction(m / gcd(m, n), n / gcd(m, n));
+        } catch (ArithmeticException e){
+            e.printStackTrace();
+            System.out.println("Произошло деление на ноль");
+            return null;
+        }
     }
 
     public static void changeEven(Fraction[] fraction){
